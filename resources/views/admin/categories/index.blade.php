@@ -79,7 +79,9 @@
                 </div>
             @endforelse
         </div>
-        {{ $categories->links() }}
+        <div class="row justify-content-center">
+            {{ $categories->withQueryString() }}
+        </div>
     </div>
 @endsection
 

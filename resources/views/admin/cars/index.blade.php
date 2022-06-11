@@ -73,7 +73,9 @@
                 </div>
             @endforeach
         </div>
-        {{ $cars->links() }}
+        <div class="row justify-content-center">
+            {{ $cars->withQueryString() }}
+        </div>
     </div>
 @endsection
 
