@@ -42,7 +42,7 @@ class ColorController extends Controller
      */
     public function store(StoreColorRequest $request)
     {
-        $category = Color::create($request->validated());
+        Color::create($request->validated());
 
          session()->flash('message', 'The color was added successfully');
          session()->flash('message-type', 'success');
@@ -83,7 +83,6 @@ class ColorController extends Controller
      */
     public function update(UpdateColorRequest $request, Color $color)
     {
-
         $color->update($request->validated());
 
         session()->flash('message', 'Color Updated Successfully');

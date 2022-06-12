@@ -19,9 +19,9 @@ class UserSeeder extends Seeder
         Role::create(['name' => 'admin']);
         Role::create(['name' => 'entry']);
 
-        User::create(['name' => 'Admin', 'email' => 'admin@topgear.test'])
+        User::create(['name' => 'Admin', 'email' => 'admin@topgear.test','password' => 'password','is_admin' => '1'])
             ->assignRole('admin');
-        User::create(['name' => 'Entry', 'email' => 'entry@topgear.test'])
+        User::create(['name' => 'Admin', 'email' => 'entry@topgear.test','password' => 'password','is_admin' => '0'])
             ->assignRole('entry');
     }
 }
