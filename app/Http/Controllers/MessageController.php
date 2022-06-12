@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\MessageReceived as EventsMessageReceived;
 use App\Models\Message;
 use Illuminate\Http\Request;
 
@@ -33,6 +34,8 @@ class MessageController extends Controller
         $message->phone = $request->phone;
         $message->content = $request->content;
         $message->save();
+
+        EventsMessageReceived::dispatch($request->email);
 
         return redirect('/#contact');
     }
