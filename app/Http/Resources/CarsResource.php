@@ -16,7 +16,7 @@ class CarsResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => "$this->brand $this->model",
+            'name' => $this->brand.$this->model,
         ];
     }
 }
